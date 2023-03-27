@@ -1,15 +1,15 @@
 # Winnipeg Transit API Documentation
 
 ## API Overview
-``` 
-Winnipeg Transit API provides a method for people to get information of transit services. This API exposes data about buses and stops. This API has two filter queries and one identity queries that can be used to find and create a variety of different resources including the following:
+
+* Winnipeg Transit API provides a method for people to get information of transit services. This API exposes data about buses and stops. This API has two filter queries and one identity queries that can be used to find and create a variety of different resources including the following:
 
 1. Get a list of bus stops that a specific bus can arrive.
 2. Get a list of buses that can arrive at the specific bus stop.
 3. Get the next bus information that will arrive at the specific bus stop.
 
 Data is returned as json format by default.
-```
+
 
 ## API Endpoint Example
 ### This API exposes data of buses and stops.
