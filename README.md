@@ -17,7 +17,7 @@ Data is returned as json format by default.
 ```https://api.transitinwinnipeg.com/buses/{bus_id}/stops``` 
 
 2. Then if you would like to retrieve the information of a list of buses that can arrive at the specific bus stop. You can have the URL：   
-```https://api.transitinwinnipeg.com/stops/{stop_id}/buses````.
+```https://api.transitinwinnipeg.com/stops/{stop_id}/buses```.
 
 3. Or say that you want to get the live information of the next bus that will arrive at the specific bus stop. In this case is by requesting from the endpoint ```https://api.transitinwinnipeg.com/stops/{stop_id}/nextbus```.
 
