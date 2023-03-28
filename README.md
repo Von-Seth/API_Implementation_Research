@@ -2,10 +2,12 @@
 
 ## API Overview
 
-* Winnipeg Transit API provides a method for people to get information of transit services. This API is designed to provide real-time schedules for busses at a stop and bus routes. Our API is designed to be fast, reliable and easy to use. The API has two filter queries and one identity query that can be used to find and create a variety of different resources including the following:
+* Winnipeg Transit API provides a method for people to get information of transit services. This API is designed to provide real-time schedules for busses at a stop and bus routes. Our API is designed to be fast, reliable and easy to use. The API has two filter queries and one identity query that can be used to find and create resources such as bus routes, stop info and bus schedules.
+  
+## Resources
 
-1. Bus routes: Get a list of bus stops that the requested bus can stop at .
-2. Stop info: Get a list of buses that can arrive at the requested bus stop.
+1. Bus routes: Gets a list of bus stops that the requested bus can stop at and provides info such as route name, and list of stops on route.
+2. Stop info: Gets a list of buses that can arrive at the requested bus stop.
 3. Bus schedule: Get the next bus information that will arrive at the requested bus stop.
 
 Data requested is returned as json format by default.
@@ -35,10 +37,10 @@ Data requested is returned as json format by default.
 | stops | array |  A list of bus stops
 | nextbus | object | The content of a bus
 
-## Example of response
+## Sample request and response
 
 ```
-1. buses
+1. https://api.transitinwinnipeg.com/buses/17/stops
 [
     {
         "bus_id": 17,
@@ -49,17 +51,6 @@ Data requested is returned as json format by default.
             },{
                 "stop_id":78,
                 "address":"North bound Polo Park Terminal at Polo Park"
-            }
-        ]
-    }, {
-        "bus_id": 60,
-        "stops":[
-            {
-                "stop_id":18,
-                "address":"Westbound Chancellor Matheson at Pembina"
-            },{
-                "stop_id":28,
-                "address":"Northbound Pembina at Dartmouth"
             }
         ]
     }
