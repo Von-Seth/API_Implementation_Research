@@ -57,5 +57,3 @@ Data requested is returned as json format by default.
 ]
 
 ```
-
-
