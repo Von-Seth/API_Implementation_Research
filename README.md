@@ -36,8 +36,8 @@ Data requested is returned as json format by default.
 | Name |Type| Description |
 | --- | ---|----------- |
 | buses| array | A list of buses. 
-| stops | array |  A list of bus stops
-| nextbus | object | The content of a bus
+| stops | array |  A list of bus stops.
+| nextbus | object | The content of a bus.
 
 ## Sample request and response
 
