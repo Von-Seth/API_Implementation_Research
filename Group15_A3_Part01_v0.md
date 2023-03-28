@@ -1,5 +1,5 @@
-# Comp 3040 Assignment 3.
-# Group 15
+# Comp 3040 Assignment 3 (Group 15)
+
 # Winnipeg Transit API Documentation
 
 ## API Overview
