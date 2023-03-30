@@ -1,5 +1,4 @@
-# Comp 3040 Assignment 3 (Group 15)
-
+# Comp 3040 Assignment 3 (# Group 15).
 # Winnipeg Transit API Documentation
 
 ## API Overview
@@ -9,9 +8,30 @@
 ## Resources
 
 1. Bus routes: Gets a list of bus stops that the requested bus can stop at and provides info such as route name, and list of stops on route.
+   ```
+    {
+        "route":[
+            "U of M", //string
+            "defoe"
+        ]
+    }
+   ```
 2. Stop info: Gets a list of buses that can arrive at the requested bus stop.
+    ```
+    {
+        "buses":[
+            60, //int64 integer
+            74
+        ]
+    }
+    ```
 3. Bus schedule: Get the next bus information that will arrive at the requested bus stop.
-
+    ```
+    {
+        busID: 60, //integer
+        time: 17:00 //string
+    }
+    ```
 Data requested is returned as json format by default.
 
 
@@ -36,27 +56,14 @@ Data requested is returned as json format by default.
 | Name |Type| Description |
 | --- | ---|----------- |
 | buses| array | A list of buses. 
-| stops | array |  A list of bus stops.
-| nextbus | object | The content of a bus.
+| stops | array |  A list of bus stops
+| nextbus | object | The content of a bus
 
 ## Sample request and response
 
 ```
 1. https://api.transitinwinnipeg.com/buses/17/stops
-[
-    {
-        "bus_id": 17,
-        "stops":[
-            {
-                "stop_id":88,
-                "address":"Westbound Dafoe at U of M Station"
-            },{
-                "stop_id":78,
-                "address":"North bound Polo Park Terminal at Polo Park"
-            }
-        ]
-    }
-]
+
 
 ```
 
