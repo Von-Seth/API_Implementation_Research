@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "title": "Manitoba Transit API",
+    "description": "",
+    "contact": {
+      "name": "Group 15",
+      "url": "https://manitobatransit.com/contact"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.manitobatransit.com"
+    }
+  ],
+  "tags": [
+    {
+      "name": "bus",
+      "description": "Information about buses"
+    },
+    {
+      "name": "stop",
+      "description": "Information about stops"
+    }
+  ],
+  "paths": {
+    "/buses/{busID}/stops": {
+      "get": {
+        "tags": [
+          "stop"
+        ],
+        "summary": "",
+        "description": "",
+        "operationId": "getStopsByBusID",
+        "parameters": [
+          {
+            "name": "busID",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 60
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return a list of bus stops.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Route"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Route": {
+        "type": "object",
+        "properties": {
+          "routes": {
+            "type": "array",
+            "description": "Buses that will arrive at this stop",
+            "items": {
+              "type": "string",
+              "example": "Westbound Innovation at Research"
+            }
+          }
+        }
+      }
+    }
+  }
+}
