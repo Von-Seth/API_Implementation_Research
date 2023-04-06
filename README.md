@@ -1,9 +1,9 @@
 # Comp 3040 Assignment 3 (# Group 15).
-# Winnipeg Transit API Documentation
+# Manitoba Transit API Documentation
 
 ## API Overview
 
-* Winnipeg Transit API provides a method for people to get information of transit services. This API is designed to provide real-time schedules for busses at a stop and bus routes. Our API is designed to be fast, reliable and easy to use. The API has two filter queries and one identity query that can be used to find and create resources such as bus routes, stop info and bus schedules.
+* Manitoba Transit API provides a method for people to get information of transit services. This API is designed to provide real-time schedules for busses at a stop and bus routes. Our API is designed to be fast, reliable and easy to use. The API has two filter queries and one identity query that can be used to find and create resources such as bus routes, stop info and bus schedules.
   
 ## Resources
 
@@ -39,12 +39,12 @@ Data requested is returned as json format by default.
 
 ### This API exposes data of buses and stops.
 1. To request a list of bus stops that a specific bus stops at, you can do so with the URL below： 
-```https://api.transitinwinnipeg.com/buses/{bus_id}/stops``` 
+```https://api.transitinmanitoba.com/buses/{bus_id}/stops``` 
 
 2. To request a list of buses that can arrive at a specific bus stop, use the URL below：   
-```https://api.transitinwinnipeg.com/stops/{stop_id}/buses```.
+```https://api.transitinmanitoba.com/stops/{stop_id}/buses```.
 
-1. To request a real-time update of the next bus that will arrive at the specific bus stop, use the URL below: ```https://api.transitinwinnipeg.com/stops/{stop_id}/nextbus```.
+1. To request a real-time update of the next bus that will arrive at the specific bus stop, use the URL below: ```https://api.transitinmanitoba.com/stops/{stop_id}/nextbus```.
 
 ## Query parameters
 | Name |Type| Description |
@@ -62,7 +62,7 @@ Data requested is returned as json format by default.
 ## Sample request and response
 
 ```
-1. https://api.transitinwinnipeg.com/buses/17/stops
+1. https://api.transitinmanitoba.com/buses/17/stops
 
 
 ```
