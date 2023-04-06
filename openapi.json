@@ -3,10 +3,11 @@
   "info": {
     "version": "1.0",
     "title": "Manitoba Transit API",
-    "description": "",
+    "description": "Get the real-time schedules for buses, route information for unique bus number,and bus information for a unique bus-stop number for Manitoba. Data is availble in JSON format and calling the API by bus ID (using the `id` parameter) will provide the most precise results",
     "contact": {
       "name": "Group 15",
-      "url": "https://manitobatransit.com/contact"
+      "url": "https://manitobatransit.com/contact",
+      "email": "group15@gmail.com"
     }
   },
   "servers": [
