@@ -1,0 +1,111 @@
+openapi: "3.0.2"
+
+info:
+  version: "1.0"
+  title: Manitoba Transit API Documentation
+  description: "Manitoba Transit provides a free API that provides bus routes, stop info and bus schedules."
+  contact:
+    name: Group 15 - Mike
+    email: Akpanm@umanitoba.ca
+
+servers:
+  - url: "https://api.transitinwinnipeg.com"
+    description: "Test server"
+tags:
+  - name: Bus
+    description: Information about buses
+  - name: Stop
+    description: Information about stops
+paths:
+  /buses/{busID}/stops:
+    get:
+      tags: 
+        - Stop
+      summary: Get bus stops. 
+      description: Input bus number and get the list of stops the bus goes to.
+      operationId: getStopsByBusID
+      parameters:
+        - in: path
+          name: busID
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 60
+      responses:
+        '200':
+          description: Return a list of bus stops.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    bus_id:
+                      type: integer
+                      description: An unique identifier of a bus.
+                    stops:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          stop_id:
+                            type: integer
+                            description: An unique identifier of a stop.
+                          address:
+                            type: string
+                            description: The address of the stop.
+
+  /stops/{stopID}/buses:
+    get:
+      tags:
+        - Bus
+      description: Input a bus stops ID and get a list of buses that arrive there.
+      summary: List all buses for my location.
+      parameters:
+        - in: path
+          name: stopID
+          required: true
+          schema:
+            type: integer
+            format: int64
+          example: 60
+      responses:
+        '200':
+          description: Return a list of buses.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    bus_id:
+                      type: integer
+                      description: An unique identifier of a bus.
+
+  /stops/{stop_id}/nextbus:
+    get:
+      tags:
+        - Stop
+      description: Input a stop ID and and get the next bus coming to the stop.
+      summary: Show next bus.
+      parameters:
+        - in: path
+          name: stopID
+          required: true
+          schema:
+            type: integer
+          description: An unique identifier of a stop. By passing this parameter, you can fetch the information of a specific stop.
+      responses:
+        '200':
+          description: Return bus schedule.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: string
+                    description: The content of the next bus.
